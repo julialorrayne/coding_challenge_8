@@ -48,3 +48,37 @@ const calculateServiceFee = (amount, serviceType) => {
 console.log(calculateServiceFee(200, "Premium")); 
 console.log(calculateServiceFee(500, "Standard")); 
 //logged results to the console
+
+//Task 4: Parameters and Arguments
+function calculateRentalCost (days, carType, insurance = false) {
+    let cost = 0;
+    if (carType === 'Economy' && insurance === true) {
+        cost = (days *40) + 20;
+    }
+    else if (carType === 'Economy' && insurance === false) {
+        cost = days *40;
+    }
+    else if (carType === 'Standard' && insurance === true) {
+        cost = (days*60) + 20;
+    }
+    else if (carType === 'Standard' && insurance === false) {
+        cost = days*60;
+    }
+    else if (carType === 'Luxury' && insurance === true) {
+        cost = (days*100) + 20;
+    }
+    else if (carType === 'Luxury' && insurance === false) {
+        cost = days*100;
+    }
+    return `Total Renatal Cost: $${cost}`;
+};
+//created function calculateRentalCost that calculates rental costs based on the number of days, car type, and insurance
+//the function calculates rental costs basd on the following:
+// "Economy" = $40/day
+// "Standard" = $60/day
+// "Luxury" = $100/day
+// Insurance costs an extra $20 per day.
+
+console.log(calculateRentalCost(3, "Economy", true)); 
+console.log(calculateRentalCost(5, "Luxury", false)); 
+// logged results to the console
