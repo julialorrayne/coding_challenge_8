@@ -21,3 +21,30 @@ function calculateDiscount(price, discountRate) {
 console.log(calculateDiscount(100, 0.2)); 
 console.log(calculateDiscount(250, 0.15)); 
 // logged results to the console
+
+//Task 3: Arrow Function
+const calculateServiceFee = (amount, serviceType) => {
+    let fee = 0;
+    if (serviceType === 'Premium') {
+        fee = amount * 0.15;
+    }
+    else if (serviceType === 'Standard') {
+        fee = amount * 0.1;
+    }
+    else if (serviceType === 'Basic'){
+        fee = amount *0.05;
+    }
+    else {
+        return `Invalid`;
+    }
+    return `Service Fee: $${fee.toFixed(2)}`;
+};
+
+//created arrow function calculateServiceFee(amount, serviceType) that applies a fee:
+// "Premium" → 15% of the amount.
+// "Standard" → 10% of the amount.
+// "Basic" → 5% of the amount.
+
+console.log(calculateServiceFee(200, "Premium")); 
+console.log(calculateServiceFee(500, "Standard")); 
+//logged results to the console
