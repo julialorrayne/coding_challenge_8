@@ -121,3 +121,22 @@ function createCartTracker() {
 console.log(cart(20)); 
 console.log(cart(35)); 
 // logged results to the console
+
+//Task 8: Recursion in JavaScript
+function calculateSavings(years_num,amount) {
+    let savings = amount;
+    if (years_num <10) {
+        savings = amount + (amount *0.05)
+        years_num++;
+        calculateSavings(years_num,savings);
+    }
+    else if (years_num === 10) {
+        console.log(`Projected Savings: $${savings.toFixed(2)}`)
+    };
+};
+//created recursive function calculateSavings that projects savings growth.
+//Each year increases savings by 5% until reaching year 10.
+
+calculateSavings(8, 1000); 
+calculateSavings(5, 5000); 
+// logged results to the console
