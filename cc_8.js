@@ -105,3 +105,19 @@ function filterLargeTransactions(transactions,filterFunction) {
 //created higher-order function filterLargeTransactions(transactions, filterFunction)to find transactions above $1000.
 
 console.log(filterLargeTransactions(transactions, amount => amount > 1000)); // logged results to the console
+
+//Task 7: Closures
+let cart = createCartTracker();
+function createCartTracker() {
+    let cart = 0;
+    return function addItems(items_num) {
+        cart += items_num;
+        return `Total Cart Value: $${cart}`;
+    }
+};
+//created function createCartTracker() that returns addItems function 
+// to add items and maintain a running total.
+
+console.log(cart(20)); 
+console.log(cart(35)); 
+// logged results to the console
